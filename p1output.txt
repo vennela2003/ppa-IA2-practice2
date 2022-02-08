@@ -1,1 +1,63 @@
+gcc -g p1original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7f4: file p1original.c, line 20.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2-1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1original.c:20
+20  {
+(gdb) n
+22    input(&x,&y);
+(gdb) s
+input (base=0x7ffdc68f7d6c, height=0x7ffdc68f7d70) at p1original.c:6
+6     printf("enter the length of the base:");
+(gdb) n
+7     scanf("%f",base);
+(gdb) n
+enter the length of the base:22
+8     printf("enter the length of the height:");
+(gdb) n
+9     scanf("%f",height);
+(gdb) n
+enter the length of the height:77
+10  }
+(gdb) n
+main () at p1original.c:23
+23   area(x,y,&z);
+(gdb) s
+area (base=22, height=77, area=0x7ffdc68f7d74) at p1original.c:13
+13    *area=((base*height)/2);
+(gdb) n
+14  }
+(gdb) n
+main () at p1original.c:24
+24   output(x,y,z);
+(gdb) s
+output (base=22, height=77, area=847) at p1original.c:17
+17    printf("the area of the triangle is %f * %f/2 is %f ",base,height,area);
+(gdb) n
+18  }
+(gdb) n
+main () at p1original.c:26
+26    return 0;
+(gdb) c
+Continuing.
+the area of the triangle is 22.000000 * 77.000000/2 is 847.000000 [Inferior 1 (process 177) exited normally]
+(gdb) 
