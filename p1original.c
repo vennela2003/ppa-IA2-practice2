@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 void input(float *base,float *height)
 {
@@ -18,10 +17,10 @@ void output(float base,float height,float area)
 }
 int main()
 {
-  float x,y,z;
-  input(&x,&y);
- area(x,y,&z);
- output(x,y,z);
+  float base, height,area;
+  input(&base,&height);
+ area(base,height,&area);
+ output(base,height,area);
 
   return 0;
 }
