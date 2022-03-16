@@ -1,46 +1,50 @@
-#include<stdio.h>
+#include <stdio.h>
 int input_number()
 {
-int n;
-printf("Enter a number: \n");
-scanf("%d",&n);
+  int n;
+  printf("enter the number:\n");
+  scanf("%d",&n);
   return n;
 }
 int is_composite(int n)
 {
-  for(int i=2; i<n/2; i++)
-    {
-int result=n%i;
-      if(result==0)
+  int i;
+  if(n==0 || n==1)
+  {
+    return 2;
+  }
+  else
+  {
+    for(i=2;i<=n/2;i++)
       {
-        return 0;
+        if(n%i==0)
+        {
+          return 1;
+        }
       }
-      if(result!=0)
-      {
-        return 1;
-      }
-    return result;
-    }
+    return 0;
+  }
 }
-void output(int n,int composite)
+void output(int n, int composite)
 {
-int result;
-  if(result==0)
-  {
-printf("The number %d is composite",n);
+  if(composite==0)
+    printf("the number %d is prime number",n);
+  else if(composite==1)
+    printf("the  number %d is composite number",n);
+  else
+    printf("the number 0&1 is neither prime nor composite number");
   }
-  if(result==1)
-  {
-printf("The number is a prime number");
-  }
-}
 int main()
 {
-  int n;
-  int composite;
-  n = input_number();
-  composite = is_composite(n);
+  int n,composite;
+  n=input_number();
+  composite=is_composite(n);
   output(n,composite);
   return 0;
 }
+
+  
+
+
+
 
