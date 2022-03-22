@@ -1,46 +1,34 @@
-#include <stdio.h>
-
+#include<stdio.h>
 int input()
 {
-  int num;
-  printf("Enter a number:\n");
-  scanf("%d", &num);
-  return num;
+int a;
+printf("Enter the number :\n");
+scanf("%d",&a);
+  return a;
 }
 
-// Using Students algorithm
-int gcd(int a, int b)
-{
-  int i,small,gcd;
-  if ( a > b)
-  {
-    small = a;
-    a=b;
-    b=small;
-  }
-  if( b%a==0)
-    return a;
-
-  for(i=0;i<a/2;i++)
-  {
-    if ( a%i == 0 && b%i == 0)
-      gcd = i;
-  }
-  return gcd;
-    
+intgcd(inta,int b)
+{ int r;
+  for(int i=1;i<=a &&i<=b;i++)
+    {
+      if(a%i==0 &&b%i==0)
+         r=i;
+    }
+  return r;
 }
-// Do using euclids algorithm 
-// https://en.wikipedia.org/wiki/Euclidean_algorithm
-void output(int a, int b, int gcd)
+
+void output(inta,intb,inthcf)
 {
-  printf("The gcd of %d and %d is %d\n", a, b, gcd);
+printf("The H.C.F (G.C.D) of %d and %d is %d",a,b,hcf);
 }
 
 int main()
 {
-  int num1 = input();
-  int num2 = input();
-  int res = gcd(num1, num2);
-  output(num1, num2, res);
+inta,b,hcf;
+  a=input();
+  b=input();
+hcf=gcd(a,b);
+  output(a,b,hcf);
   return 0;
+
 }
