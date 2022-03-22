@@ -7,7 +7,7 @@ scanf("%d",&a);
   return a;
 }
 
-intgcd(inta,int b)
+int gcd(int a,int b)
 { int r;
   for(int i=1;i<=a &&i<=b;i++)
     {
@@ -17,17 +17,17 @@ intgcd(inta,int b)
   return r;
 }
 
-void output(inta,intb,inthcf)
+void output(int a,int b,int hcf)
 {
 printf("The H.C.F (G.C.D) of %d and %d is %d",a,b,hcf);
 }
 
 int main()
 {
-inta,b,hcf;
+int a,b,hcf;
   a=input();
   b=input();
-hcf=gcd(a,b);
+hcf = gcd(a,b);
   output(a,b,hcf);
   return 0;
 
