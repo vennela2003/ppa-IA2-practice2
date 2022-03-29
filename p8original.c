@@ -15,7 +15,7 @@ Triangle input_triangle()//Enter the base, altitude of a triangle
 {
   Triangle t;
 printf("Enter the base, altitude of a triangle:\n");
-scanf("%f%f", &t.base, &t.altitude);
+scanf("%f %f", &t.base, &t.altitude);
 return t;
 }
 void input_n_triangles(int n, Triangle t[n])// Enter the base, altitude of n triangle
@@ -27,7 +27,7 @@ t[i] = input_triangle();
 }
 void find_area(Triangle *t)//calculate area of triangle
 {
-t->area=0.5*(t->base)*(t->altitude);
+t->area = 0.5*(t->base)*(t->altitude);
 }
 void find_areas_n(int n, Triangle t[n])////calculate area of n triangle
 {
@@ -45,7 +45,7 @@ for (int i = 1; i < n; i++)
   {
 if (small.area> t[i].area)
     {
-small= t[i];
+small = t[i];
     }
   }
 return small;
@@ -65,7 +65,7 @@ int n = input_n();
   Triangle t[n];
 input_n_triangles(n, t);
 find_areas_n(n, t);
-  Triangle small = find_smallest_triangle(n, t);
+Triangle small = find_smallest_triangle(n, t);
 output(n, t, small);
 return 0;
 }

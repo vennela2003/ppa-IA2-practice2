@@ -14,7 +14,7 @@ return m;
 void output(char *a,char reversea)
 {
 printf("The reverse of the string is: \n");
-for(int i=reversea-1;i!=-1;i--)
+for(int i=reversea-1;a[i]!='\0';i--)
 printf("%c",a[i]);
 }
 int main()
